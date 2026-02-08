@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Wife Saumya 💗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      text-align: center;
+      color: #444;
+    }
+    h1 { color: #ff4f9a; }
+    .container {
+      padding: 20px;
+      max-width: 420px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    button {
+      background: #ff7eb3;
+      border: none;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 25px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { background: #ff4f9a; }
+
+    .avatar {
+      width: 160px;
+      margin: auto;
+      animation: float 3s ease-in-out infinite;
+    }
+    .avatar img { width: 100%; }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+    input[type=range] { width: 100%; }
+    .secret {
+      font-size: 12px;
+      opacity: 0.4;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>For My Wife Saumya 💗</h1>
+    <p><i>Jab Saumya upset hoti hai, husband ko sudharna hi padta hai 😭</i></p>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="avatar.png" alt="Husband Avatar">
+      </div>
+      <p><b>Status:</b> Saumya ke mood ke hawaale 😌</p>
+    </div>
+
+    <div class="card">
+      <h3>🎡 Saumya ka Punishment Wheel</h3>
+      <p id="wheelResult">Spin karo meri jaan 😏</p>
+      <button onclick="spinWheel()">SPIN</button>
+    </div>
+
+    <div class="card">
+      <h3>😡 Saumya ka Mood Panel</h3>
+      <button onclick="setMood('angry')">Bahut Gussa 😡</button>
+      <button onclick="setMood('sad')">Thoda Upset 🥺</button>
+      <button onclick="setMood('fake')">Bas Drama 😏</button>
+      <p id="moodText"></p>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Roast Your Husband</h3>
+      <p id="roastText">Shaadi ke baad thoda roast allowed hai 😭</p>
+      <button onclick="roast()">ROAST</button>
+    </div>
+
+    <div class="card">
+      <h3>💌 Sorry Generator (Husband Edition)</h3>
+      <p id="sorryText">Sorry Saumya…</p>
+      <button onclick="sorry()">Generate Sorry</button>
+    </div>
+
+    <div class="card">
+      <h3>❤️ Saumya ka Forgiveness Meter</h3>
+      <input type="range" min="0" max="100" oninput="forgive(this.value)">
+      <p id="forgiveText">Saumya decide kar rahi hai…</p>
+    </div>
+
+    <div class="secret" onclick="secretLove()">Saumya 👀</div>
+  </div>
+
+<script>
+  const punishments = [
+    "Saumya ke liye 3 cute selfies 📸",
+    "Saumya ko 5 baar sorry 😭",
+    "Saumya chooses my DP for 24 hrs",
+    "Saumya ke liye voice note apology 🎤",
+    "Saumya ko chocolate treat 🍫",
+    "Aaj pura din sirf sweet behave 😌",
+    "Saumya ke saath 30 min bina phone baat",
+    "Handwritten sorry note ✍️",
+    "Next date Saumya plan karegi 💕",
+    "Saumya ke liye surprise hug 🫂",
+    "Aaj sirf sunna, argue nahi 👂",
+    "Saumya ke favourite gaane pe reel 🎵",
+    "Public bolna: meri wife best hai 😭",
+    "Lifetime punishment: only Saumya 😏"
+  ];
+
+  function spinWheel() {
+    wheelResult.innerText =
+      punishments[Math.floor(Math.random() * punishments.length)];
+  }
+
+  function setMood(mood) {
+    moodText.innerText =
+      mood === "angry" ? "Saumya bahut gussa hai 😡 husband silent + sorry mode!" :
+      mood === "sad" ? "Aww Saumya 🥺 husband is here." :
+      "Drama mode ON 😏 husband still sorry.";
+  }
+
+  const roasts = [
+    "Shaadi ke baad bhi bhool jaata hai 😭",
+    "Dil ka achha, dimaag kabhi kabhi off",
+    "Galti karta hai, phir cute ban jaata hai",
+    "Saumya ke mood pe hi chalta hai 😌",
+    "Overconfident, underprepared 🤡",
+    "Training abhi bhi pending 😤",
+    "Cute face, zero logic sometimes",
+    "Saumya ke bina bilkul useless",
+    "Galti + justification combo 😭",
+    "One-woman man, still learning 🥲",
+    "Instructions clear thi, follow nahi ki",
+    "Ego nahi, bas confusion hai",
+    "Shaadi ke baad bhi sudhar raha hai",
+    "Husband hoon, perfect nahi 😏"
+  ];
+
+  function roast() {
+    roastText.innerText =
+      roasts[Math.floor(Math.random() * roasts.length)];
+  }
+
+  const sorries = [
+    "Sorry Saumya 🥺 dil se",
+    "Meri galti thi Saumya",
+    "Husband hoon, par perfect nahi 😭",
+    "Saumya ke bina sab adhoora",
+    "Tu hi meri shaanti hai 💗",
+    "Please maaf kar do meri jaan",
+    "Ego nahi tha, stupidity thi 😭",
+    "Aap sahi ho, main galat",
+    "Galti repeat nahi hogi 🤞",
+    "Meri duniya Saumya se hi chalti hai",
+    "Tum upset ho to sab off lagta hai",
+    "Responsibility meri hai",
+    "Tumhara gussa bhi pyaara hai",
+    "Last time tha Saumya 😭",
+    "Saumya ke saamne surrender 😌",
+    "Dil se sorry, bina excuse 💗"
+  ];
+
+  function sorry() {
+    sorryText.innerText =
+      sorries[Math.floor(Math.random() * sorries.length)];
+  }
+
+  function forgive(val) {
+    if (val < 20) forgiveText.innerText = "Bilkul nahi 😡";
+    else if (val < 40) forgiveText.innerText = "Ignore mode 😤";
+    else if (val < 60) forgiveText.innerText = "Soch rahi hoon 🤔";
+    else if (val < 80) forgiveText.innerText = "Pighal rahi hoon 🥺";
+    else forgiveText.innerText = "Maaf kiya 💗 (husband lucky hai 😏)";
+  }
+
+  function secretLove() {
+    alert("Saumya, meri wife ho, meri choice ho, aur meri sabse badi blessing ho 💗🥹");
+  }
+</script>
+
+</body>
+</html>
